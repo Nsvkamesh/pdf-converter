@@ -7,7 +7,7 @@
 /* Apply background image */
 body {
     font-family: Helvetica, sans-serif;
-    background-image: url('https://wallpaperaccess.com/full/1658089.jpg'); /* Add your background image URL here */
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/09/Download-All-White-Image.jpg'); /* Add your background image URL here */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -69,8 +69,8 @@ input[type="number"] {
     position: absolute;
     top: 5px;
     right: 5px;
-    background-color: red;
-    color: white;
+    background-color:black;
+    color:silver;
     border: none;
     border-radius: 50%;
     padding: 3px;
@@ -78,13 +78,14 @@ input[type="number"] {
 }
 /* List item styles */
 li {
-    background-color: #dec2c7;
+    background-color:black;
     padding: 10px;
     margin: 5px;
     border: 1px solid #ccc;
     cursor: grab;
     position: relative;
     min-width: 100px;
+    color: silver;
 }
 li:hover {
     background-color: #f0f0f0;
@@ -104,5 +105,14 @@ li:hover {
     background-color: #007bff; /* Change color to our preferece, and it Indicates conversion, once the bar turns completely blue,it indicates that the process is complete. */
     transition: width 0.3s ease-in-out;
 }
+.file-preview{
+    width:1000px;
+    height:450px;
+    padding-bottom: 50px;
+    padding-left: 400px;
+    
+    
+}
+
 /* Note this project can be extended to other file formats and can be enhanced in better way.
 /* Add any additional CSS styles and customizations as needed */
