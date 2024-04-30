@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PDFgo - Online PDF Converter</title>
+    <title>Online PDF Converter</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <style>
+        .file-container{
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        .options{
+            text-align: center;
+            padding-top: 50px;
+            line-height: 30px;
+        }
+        label{
+            font-weight: bold;
+        }
+    </style>
     
 </head>
 <body>
     <header>
-        <h1>PDFgo - Online PDF Converter</h1>
+        <h1>SNAP 2 PDF</h1>
+        
     </header>
     <div class="container">
         <div class="options">
-            <label for="conversionType">Select Conversion Type:</label>
-            <select id="conversionType">
+            <label for="conversionType" style="padding-right: 25px;">Select Conversion Type:</label>
+            <select id="conversionType" style="padding-right: 83px;">
                 <option value="imageToPdf">Image to PDF</option>
-                <option value="pdfToImage">PDF to Image</option>
+                
             </select>
             <br>
-            <label for="imagesPerPage">Images Per Page:</label>
-            <select id="imagesPerPage">
+            <label for="imagesPerPage" style="padding-right: 25px;">Images Per Page:</label>
+            <select id="imagesPerPage" style="margin-left: 1px;">
                 <option value="1">1 Image per Page</option>
                 <option value="2">2 Images per Page</option>
                 <option value="4">4 Images per Page</option>
             </select>
             <br>
-            <label for="paperFormat">Select Paper Format:</label>
-            <select id="paperFormat">
+            <label for="paperFormat" style="padding-right: 25px;">Select Paper Format:</label>
+            <select id="paperFormat" style="margin-right: 60px;">
             <option value="a4">A4 Portrait</option>
             <option value="a4-landscape">A4 Landscape</option>
             <option value="a3">A3 Portrait</option>
             <option value="a3-landscape">A3 Landscape</option>
             </select>
             <br>
-            <label for="marginInput">Set Margins (mm):</label>
-            <input type="number" id="marginInput" value="10" min="0">
+            <label for="marginInput" style="padding-right: 25px ;">Set Margins (mm):</label>
+            <input type="number" id="marginInput" value="10" min="0" style="margin-right: 100px;">
             <br>
-            <label for="filename">Enter Filename:</label>
-            <input type="text" id="filename" placeholder="converted.pdf">
+            <label for="filename" style="padding-right: 30px;">Enter Filename:</label>
+            <input type="text" id="filename" placeholder="converted.pdf" style="margin-left: 25px;">
             <br>
-            <button id="convert">Convert</button>
+            <button id="convert" style="margin-top: 20px;">Convert</button>
         </div>
-        <div class="file-container">
-            <input type="file" id="upload" multiple>
-            <button id="addFiles">Add Files</button>
+        <div class="file-container" >
+            <input type="file" id="upload" multiple >
+            <button id="addFiles" style="text-align: center;">Add Files</button>
         </div>
     </div>
     <div id="fileList" class="container">
@@ -53,19 +70,8 @@
         <div id="filePreviews" class="file-previews"></div>
         <ul id="sortable" class="sortable-files"></ul>
     </div>
-    <!-- Add this code to the end of your HTML document -->
-<div id="feedbackForm" class="container">
-    <h2>Feedback</h2>
-    <form id="feedbackForm">
-        <label for="satisfaction">1. Are you satisfied with the current conversions?</label><br>
-        <input type="text" id="satisfaction" name="satisfaction" placeholder="Your one-line response"><br><br>
+    
 
-        <label for="suggestions">2. Any suggestions for future upgrades?</label><br>
-        <textarea id="suggestions" name="suggestions" rows="5" placeholder="Your feedback (up to 400 words)"></textarea><br><br>
-
-        <button id="submitFeedback">Submit</button>
-    </form>
-</div>
 <div id="progress-bar" class="progress-bar">
     <div id="progress" class="progress"></div>
 </div>
@@ -191,26 +197,16 @@
             document.getElementById('progress').style.width = progress + '%';
         }
     });
-    doc.save(filename); // Save the PDF after all images are added.
-    // Add this JavaScript code to handle the feedback form submission
-document.getElementById('submitFeedback').addEventListener('click', function (e) {
-    e.preventDefault();
+    doc.save(filename); 
+ 
+};
 
-    var satisfaction = document.getElementById('satisfaction').value;
-    var suggestions = document.getElementById('suggestions').value;
-
-    // You can store the feedback in local storage or send it to a server for processing
-    // For now, we'll just display the feedback in an alert
-    alert("Thank you for your feedback!\n\n1. Satisfaction: " + satisfaction + "\n2. Suggestions: " + suggestions);
-
-    // Clear the form fields after submission (optional)
-    document.getElementById('satisfaction').value = '';
-    document.getElementById('suggestions').value = '';
-});
-}
     </script>
 </body>
-<footer align="center">
-    &copy; 
-</footer>
 </html>
+
+       
+       
+           
+       
+          
